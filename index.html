@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cours Alpine js</title>
+    <!-- File Css -->
+    <link href="src/output.css" rel="stylesheet" />
+  </head>
+  <body
+    class="flex items-center justify-center min-h-screen bg-gray-100 cursor-pointer"
+  >
+    <div
+      class="bg-gray-100 flex flex-col items-center justify-center text-white"
+      x-data="{message:'Hello World', count:0 , show:true , languages: [ 'PHP', 'JavaScript', 'Python' , 'Java' , 'C++' , 'C#' ] }"
+    >
+      <template x-if="show">
+        <h1 class="adel">Welcome to Alpine js</h1>
+      </template>
+      <template x-for="language in languages">
+        <p x-text="language"></p>
+      </template>
+
+      <p
+        class="text-3xl font-bold bg-amber-600 rounded-2xl"
+        x-text="message"
+      ></p>
+      <p
+        class="text-2xl font-semibold text-center flex justify-center text-2xl text-red-950"
+        x-text="count"
+      ></p>
+      <button
+        @click="count++"
+        class="px-4 py-2 mt-4 align-center text-white bg-blue-500 rounded-2xl hover:bg-blue-700 cursor-pointer"
+      >
+        Increment
+      </button>
+      <button
+        @click="count--"
+        class="px-4 py-2 mt-4 align-center text-white bg-red-500 rounded-2xl hover:bg-red-700 cursor-pointer"
+      >
+        Decrement
+      </button>
+      <button
+        @click="show =!show"
+        class="px-4 py-2 mt-4 align-center text-white bg-green-500 rounded-2xl hover:bg-green-700 cursor-pointer"
+      >
+        Toggle Message
+      </button>
+    </div>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="script.js"></script>
+  </body>
+</html>

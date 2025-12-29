@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+.adel {
+  @apply text-3xl font-bold underline;
+  color: #f00;
+  text-align: center;
+}
